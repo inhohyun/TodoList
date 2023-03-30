@@ -7,7 +7,8 @@ import androidx.room.RoomDatabase
 
 
 @Database(entities = arrayOf(TodoEntity::class), version = 1) // 조건1
-abstract class AppDatabase : RoomDatabase(){
+abstract class AppDatabase : RoomDatabase(){ //조건2
+    abstract fun getTodoDao() : TodoDao // 조건3
 
     companion object {
         val databaseName = "db_todo"
